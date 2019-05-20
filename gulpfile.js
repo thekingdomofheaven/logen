@@ -1,10 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const {src, dest} = require('gulp');
+const sass = require('gulp-sass');
 
-gulp.task('sass',function(){
-  return gulp.src('./src/scss/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./dist/css'));
-});
+function stylebuild(){
+  return src('./src/scss/**/*.scss')
+  .pipe(sass({
+    outputStyle:'compressed'
+  }).on('error', sass.logError))
+  .pipe(dest('./dist/css'));
+}
 
-gulp.task('default',['sass']);
+exports.default = stylebuild;

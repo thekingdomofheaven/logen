@@ -1,4 +1,4 @@
-const {src, dest, watch, series} = require('gulp');
+const {src, dest, watch, series, parallel} = require('gulp');
 const sass = require('gulp-sass');
 
 function stylebuild(){
@@ -8,14 +8,22 @@ function stylebuild(){
 		outputStyle: 'compressed' // nested, expanded, compact, or compressed.
 	}).on('error', sass.logError))
   .pipe(dest('./dist/css'));
-}
+};
 
 function htmlcopy(){
   return src('./src/index.html')
   .pipe(dest('./dist'));
+};
+
+function scriptcopy(){
+  return src('./src/js/**/*.js')
+  .pipe(dest('./dist/js'));
+};
+
+function allwatch(){
+  watch('./src/index.html',htmlcopy);
+  watch('./src/js/**/*.js',scriptcopy);
+  watch('./src/scss/**/*.scss',stylebuild);
 }
 
-exports.default = function(){
-  watch('./src/scss/**/*.scss',stylebuild);
-  watch('./src/index.html', htmlcopy);
-};
+exports.default = series(stylebuild, htmlcopy, scriptcopy, allwatch);

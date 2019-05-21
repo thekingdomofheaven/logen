@@ -1,5 +1,10 @@
 const {src, dest, watch, series, parallel} = require('gulp');
 const sass = require('gulp-sass');
+const del = require('del');
+
+function styledel(){
+  return del('./dist/css')
+};
 
 function stylebuild(){
   return src('./src/scss/**/*.scss')
@@ -10,20 +15,29 @@ function stylebuild(){
   .pipe(dest('./dist/css'));
 };
 
+const style = series(styledel, stylebuild);
+
 function htmlcopy(){
   return src('./src/index.html')
   .pipe(dest('./dist'));
 };
+
+function scriptdel(){
+  return del('./dist/js')
+}
 
 function scriptcopy(){
   return src('./src/js/**/*.js')
   .pipe(dest('./dist/js'));
 };
 
+const script = series(scriptdel, scriptcopy);
+
 function allwatch(){
   watch('./src/index.html',htmlcopy);
-  watch('./src/js/**/*.js',scriptcopy);
-  watch('./src/scss/**/*.scss',stylebuild);
+  watch('./src/js/**/*.js',script);
+  watch('./src/scss/**/*.scss',style);
 }
 
-exports.default = series(stylebuild, htmlcopy, scriptcopy, allwatch);
+exports.build = parallel(styledel, scriptdel);
+exports.default = series(style, htmlcopy, script, allwatch);

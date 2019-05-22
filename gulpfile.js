@@ -7,7 +7,7 @@ function styledel(){
 };
 
 function stylebuild(){
-  return src('./src/scss/**/*.scss')
+  return src(['./src/scss/**/*.scss','./src/scss/**/*.css'])
   .pipe(sass({
 		errLogToConsole: true,
 		outputStyle: 'compressed' // nested, expanded, compact, or compressed.

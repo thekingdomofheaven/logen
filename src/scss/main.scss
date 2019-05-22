@@ -1,3 +1,30 @@
-#touchSlider { background:#ccc; position:relative; overflow:hidden; }
+#touchSlider { background:#ccc; position: relative; overflow:hidden;
+}
 #touchSlider ul { position:absolute; top:0; left:0; overflow:hidden; }
-#touchSlider ul li { height:150px; background:#9C9; font-size:14px; color:#fff; }
+#touchSlider ul li { height:150px; background:#9C9; font-size:14px; color:#fff;
+}
+
+#touchSlider{
+  ul{
+    li{
+      height: 1080px;
+      width:100%;
+      background-position: center 0;
+      img{
+        position: absolute;
+        left:50%;
+        top:300px;
+        transform: translate(-50%,0);
+      }
+    }
+    .bg1{
+      background-image: url(../img/bg1.jpg)
+    }
+    .bg2{
+      background-image: url(../img/bg2.jpg)
+    }
+    .bg3{
+      background-image: url(../img/bg3.jpg)
+    }
+  }
+}

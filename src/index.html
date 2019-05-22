@@ -16,11 +16,11 @@
             effect: 'fade',
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay:{
-                delay:4000
+                clickable: true
             }
+            /* autoplay:{
+                delay:4000
+            }*/
         })
     });
     </script>
@@ -30,11 +30,17 @@
     <div class="mainBg">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide bg1"><img src="./img/ico_mainbg_01.png"></div><!-- swiper-slide -->
-                <div class="swiper-slide bg2"><img src="./img/ico_mainbg_03.png"></div><!-- swiper-slide -->
-                <div class="swiper-slide bg3"><img src="./img/ico_mainbg_02.png"></div><!-- swiper-slide -->
+                <div class="swiper-slide bg1"><img src="./img/ico_mainbg_01.png">
+                <p class="bgtext">미소로 전하는 명품 서비스<br>로젠택배</p>
+                </div><!-- swiper-slide -->
+                <div class="swiper-slide bg2"><img src="./img/ico_mainbg_03.png">
+                <p class="bgtext">고객을 나의 가족처럼,<br>물품은 나의 소유처럼</p>
+                </div><!-- swiper-slide -->
+                <div class="swiper-slide bg3"><img src="./img/ico_mainbg_02.png">
+                <p class="bgtext">21세기 물류문화를<br>선도하는 기업 로젠</p>
+                </div><!-- swiper-slide -->
             </div><!-- swiper-warpper -->
-            <div class="swiper-pagination swiper-pagination-white"></div>
+            <div class="swiper-pagination swiper-pagination-clickable"></div>
         </div><!-- swiper-container -->
     </div><!-- mainBg -->
 </header>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/common.css">
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script>
@@ -17,7 +18,9 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
-            }
+            },
+            allowTouchMove: false,
+
             /* autoplay:{
                 delay:4000
             }*/
@@ -43,6 +46,7 @@
             <div class="swiper-pagination swiper-pagination-clickable"></div>
         </div><!-- swiper-container -->
     </div><!-- mainBg -->
+    @@include('./html/gnb.html')
 </header>
 </body>
 </html>

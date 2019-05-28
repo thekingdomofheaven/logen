@@ -93,4 +93,45 @@ body{
       }
     }
   }
+  .inputarea{
+    width:490px;
+    height:100%;
+    position: relative;
+    input{
+      width:450px;
+      border:none;
+      height:40px;
+      font-size: 20px;
+      font-weight: 400;
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      text-align: center;
+      outline: transparent;
+      &::placeholder{
+        color:#222;
+      }
+    }
+    
+    button{
+      width:40px;
+      height:40px;
+      border:none;
+      background-image: url(../img/btn_headerSearch.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      right:0;
+      top:50%;
+      transform: translateY(-17px);
+      cursor: pointer;
+      outline: transparent;
+    }
+  }
 }
+/* 인풋 화살표 없애기 */
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 화살표 없애기 끝 */

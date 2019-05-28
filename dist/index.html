@@ -75,6 +75,20 @@
         </div><!-- rightMenu -->
       </div><!-- topMenu -->
     </div><!-- topWrap -->
+    <script>
+    $(document).ready(function(){
+      $('.menu > li').mouseenter(function(){
+        $('.topWrap').addClass('on');
+        $('#logo > img').attr('src','./img/img_logo_on.png');
+      });
+      var topWrap = $('.topWrap');
+      var logoImg = $('#logo > img');
+      topWrap.mouseleave(function(){
+        topWrap.removeClass('on');
+        logoImg.attr('src','./img/img_logo.png');
+      });
+    });
+    </script>
 </header>
 </body>
 </html>

@@ -57,7 +57,7 @@
     </div><!-- mainBg -->
     <div class="topWrap">
       <div class="topMenu">
-        <h1 id="logo"><img src="./img/img_logo.png" alt="Logen로제택배 로고이미지"></h1>
+        <h1 class="logo">로젠택배</h1>
         <ul class="menu">
           <li><a href="#">회사소개</a></li>
           <li><a href="#">개인택배</a></li>
@@ -77,15 +77,15 @@
     </div><!-- topWrap -->
     <script>
     $(document).ready(function(){
-      $('.menu > li').mouseenter(function(){
-        $('.topWrap').addClass('on');
-        $('#logo > img').attr('src','./img/img_logo_on.png');
-      });
+      var logo = $('.logo');
       var topWrap = $('.topWrap');
-      var logoImg = $('#logo > img');
+      $('.menu > li').mouseenter(function(){
+        topWrap.addClass('on');
+        logo.css({"background":"url(./img/img_logo_on.png)"});
+      });
       topWrap.mouseleave(function(){
         topWrap.removeClass('on');
-        logoImg.attr('src','./img/img_logo.png');
+        logo.css({"background":"url(./img/img_logo.png)"});
       });
     });
     </script>

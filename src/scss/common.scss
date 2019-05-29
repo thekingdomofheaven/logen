@@ -11,10 +11,14 @@
   .topMenu{
     width:100%;
   }
-  #logo{
+  .logo{
     position: absolute;
     top:15px;
     left:40px;
+    width:86px;
+    height: 54px;
+    background:url(../img/img_logo.png);
+    text-indent:-9999px;
   }
   .menu{
     display:flex;

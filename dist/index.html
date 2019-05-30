@@ -25,6 +25,14 @@
                 delay:4000
             }
         })
+        var autoControl = $('.autoplay-control');
+        autoControl.on('click',function(){
+            mySwiper.autoplay.stop();
+            autoControl.addClass('on');
+        });
+        $('.autoplay-control.on').on('click',function(){
+            console.log(thatsOk);
+        })
     });
     </script>
 </head>
@@ -54,6 +62,7 @@
                 <button></button>
             </div><!-- inputarea -->
         </div><!-- searchbox -->
+        <button class="autoplay-control"></button>
     </div><!-- mainBg -->
     <div class="topWrap">
       <div class="topMenu">

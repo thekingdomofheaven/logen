@@ -30,6 +30,10 @@
             mySwiper.autoplay.stop();
             autoControl.addClass('on');
         });
+        var autoControlOn = $('.autoplay-control.on');
+        autoControlOn.on('click', function(){
+            console.log('ok');
+        });
         
     });
     </script>

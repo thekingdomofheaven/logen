@@ -135,3 +135,24 @@ body{
   margin: 0;
 }
 /* 화살표 없애기 끝 */
+.mainbg{
+  position: relative;
+}
+/* 메인슬라이드 오토플레이 버튼 */
+.autoplay-control{
+  width:36px;
+  height:36px;
+  position: absolute;
+  bottom:-370px;
+  left:50%;
+  z-index: 10;
+  transform: translateX(40px);
+  border:none;
+  background-color:transparent;
+  background-image: url(../img/ico_slide_stop.png);
+  cursor: pointer;
+  outline:transparent;
+}
+.autoplay-control.on{
+  background-image: url(../img/ico_slide_play.png);
+}

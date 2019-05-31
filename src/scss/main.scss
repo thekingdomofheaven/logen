@@ -49,6 +49,7 @@ body{
 }
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
   margin:0 6px;
+  margin-bottom: 200px;
 }
 .searchbox{
   position: absolute;
@@ -143,7 +144,7 @@ body{
   width:36px;
   height:36px;
   position: absolute;
-  top:1040px;
+  top:842px;
   left:50%;
   z-index: 10;
   transform: translateX(40px);

@@ -157,3 +157,28 @@ body{
 .autoplay-control.on{
   background-image: url(../img/ico_slide_play.png);
 }
+/* 퀵서비스 영역 */
+.quickservice{
+  height:150px;
+  width:100%;
+  background-image:url(../img/bg_quickmenu.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+  .quick-wrap{
+    width:1200px;
+    height:100%;
+    margin:0 auto;
+  }
+  .quick-tit{
+    width:220px;
+    height:100%;
+  }
+  .quick-icon-list{
+    width:calc(100% - 220px);
+    display:flex;
+    li{
+
+    }
+  }
+}

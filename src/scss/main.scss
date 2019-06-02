@@ -176,7 +176,9 @@ body{
   }
   .quick-icon-list{
     width:calc(100% - 220px);
+    height: 100%;
     display:flex;
+    float: left;
     li{
 
     }

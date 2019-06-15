@@ -173,14 +173,45 @@ body{
   .quick-tit{
     width:220px;
     height:100%;
+    display:table;
+    float: left;
+    span{
+      color:#694f1c;
+      font-size: 24px;
+      text-align: right;
+      display:table-cell;
+      vertical-align: middle;
+      font-weight: bold;
+      padding-right: 30px;
+    }
   }
   .quick-icon-list{
     width:calc(100% - 220px);
     height: 100%;
     display:flex;
     float: left;
+    background:#ffbb45;
     li{
-
+      width:140px;
+      height:100%;
+      a{
+        display:block;
+        width:100%;
+        height:135px;
+        margin-top: 8px;
+        border-radius: 30px;
+        span{
+          color:#61553e;
+          text-align: center;
+          display:block;
+        }
+        &:hover{
+          background:#61553e;
+          span{
+            color:#fff;
+          }
+        }
+      }
     }
   }
 }

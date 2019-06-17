@@ -24,7 +24,7 @@ body{
         line-height: 90px;
         position: absolute;
         left:50%;
-        top:500px;
+        top:590px;
         transform: translateX(-50%);
       }
     }
@@ -303,13 +303,13 @@ body{
   }
 }
 //1위 영역
-.firstgrade{
+.firstprize{
   height:1077px;
   background-image: url(../img/bg_mainBg_con01.jpg);
   background-size: cover;
   background-position: -600px 0;
   width:100%;
-  .firstgrade-wrap{
+  .firstprize-wrap{
     width:1204px;
     margin:0 auto;
     p{
@@ -318,7 +318,7 @@ body{
       color:#aaa;
       font-size: 18px;
     }
-    .firstgrade-tit{
+    .firstprize-tit{
       text-align: center;
       font-size: 48px;
       font-weight: 300;
@@ -336,8 +336,23 @@ body{
         text-align: center;
         img{}
         h3{
-          span{}
+          font-size: 28px;
+          font-weight: 100;
+          span{
+            font-weight: 600;
+          }
         }
+      }
+    }
+  }
+}
+//택배 서비스 안내 영역
+.parcel-service{
+  .parcel-wrap{
+    ul{
+      li{}
+      .parcel-info{
+        
       }
     }
   }

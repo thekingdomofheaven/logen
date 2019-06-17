@@ -302,3 +302,43 @@ body{
     }
   }
 }
+//1위 영역
+.firstgrade{
+  height:1077px;
+  background-image: url(../img/bg_mainBg_con01.jpg);
+  background-size: cover;
+  background-position: -600px 0;
+  width:100%;
+  .firstgrade-wrap{
+    width:1204px;
+    margin:0 auto;
+    p{
+      text-align: center;
+      padding-top: 140px;
+      color:#aaa;
+      font-size: 18px;
+    }
+    .firstgrade-tit{
+      text-align: center;
+      font-size: 48px;
+      font-weight: 300;
+      margin-bottom: 90px;
+      span{
+        font-weight: 600;
+      }
+    }
+    ul{
+      display:flex;
+      width:100%;
+      li{
+        justify-content: space-between;
+        width:400px;
+        text-align: center;
+        img{}
+        h3{
+          span{}
+        }
+      }
+    }
+  }
+}

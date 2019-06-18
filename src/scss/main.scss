@@ -348,11 +348,51 @@ body{
 }
 //택배 서비스 안내 영역
 .parcel-service{
+  margin-top: 100px;
   .parcel-wrap{
+    width:1204px;
+    margin:0 auto;
     ul{
-      li{}
+      li{
+        float: left;
+        width:300px;
+        height:400px;
+        background-repeat: no-repeat;
+      }
       .parcel-info{
-        
+        width:600px;
+        height:400px;
+        background-image: url(../img/img_mainCon02.png);
+        background-repeat: no-repeat;
+        background-position: 300px 160px;
+        h2{
+          font-size: 48px;
+          font-weight: 500;
+          margin-bottom: 30px;
+        }
+        p{
+          font-size: 18px;
+          color:#666;
+          font-weight: 300;
+        }
+      }
+      .parcel-charge{
+        background-image:url(../img/img_con2bg_01.jpg);
+      }
+      .parcel-branch{
+        background-image: url(../img/img_con2bg_02.jpg);
+      }
+      .parcel-packing{
+        background-image: url(../img/img_con2bg_03.jpg);
+      }
+      .parcel-reception{
+        background-image: url(../img/img_con2bg_04.jpg);
+      }
+      .parcel-accident{
+        background-image: url(../img/img_con2bg_05.jpg);
+      }
+      .parcel-receipt{
+        background-image: url(../img/img_con2bg_06.jpg);
       }
     }
   }

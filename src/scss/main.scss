@@ -339,6 +339,11 @@ body{
     width:1204px;
     margin:0 auto;
     ul{
+      &:after{
+        content:'';
+        display:block;
+        clear: both;
+      }
       li{
         float: left;
         width:300px;
@@ -415,5 +420,35 @@ body{
         border-bottom: 1px solid #ccc;
       }
     }
+  }
+}
+//랩 컨테이너 정의
+.wrap{
+  width:1204px;
+  margin:0 auto;
+}
+//공지사항 영역
+.notice-area{
+  margin-top: 150px;
+  height:420px;
+  background-image: url(../img/bg_mainBg_con03.jpg);
+  .notice-group{
+    width:844px;
+    padding-top: 120px;
+  }
+  .notice-titbox{
+    width:300px;
+  }
+  .notice-tit{
+    font-size: 40px;
+    color:#222;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .notice-explain{
+    margin-bottom: 40px;
+    font-size: 18px;
+    color:#666;
+    font-weight: 300;
   }
 }

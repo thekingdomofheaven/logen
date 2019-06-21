@@ -320,7 +320,6 @@ body{
         justify-content: space-between;
         width:400px;
         text-align: center;
-        img{}
         h3{
           font-size: 28px;
           font-weight: 100;
@@ -450,5 +449,15 @@ body{
     font-size: 18px;
     color:#666;
     font-weight: 300;
+  }
+  .notice-more{
+    width:163px;
+    height:24px;
+    display:block;
+    color:#666;
+    font-weight: 500;
+    background-image:url(../img/ico_mainCon03_link.png);
+    background-repeat: no-repeat;
+    background-position: right 0;
   }
 }

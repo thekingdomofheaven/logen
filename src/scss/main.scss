@@ -469,15 +469,42 @@ body{
     float: left;
     background:#fff;
     margin-right: 10px;
+    margin-top: 10px;
   }
 }
 .board{
+  position: relative;
   .sort{
     color:#ffa043;
     border: 1px solid #ffa043;
     padding:0 10px;
+    position: absolute;
+    left:30px;
+    top:30px;
   }
   .link-tit{
     display:block;
+    position: absolute;
+    left:30px;
+    top:80px;
+    font-size: 17px;
+    color:#222;
+    width:170px;
+  }
+  .link{
+    display:block;
+    width:25px;
+    height:25px;
+    background:url(../img/img_con3notice_btn.png) no-repeat;
+    position: absolute;
+    right:30px;
+    top:30px;
+  }
+  .date{
+    position: absolute;
+    bottom:30px;
+    left:30px;
+    font-size: 14px;
+    color:#999;
   }
 }

@@ -437,6 +437,7 @@ body{
   }
   .notice-titbox{
     width:300px;
+    float: left;
   }
   .notice-tit{
     font-size: 40px;
@@ -459,5 +460,24 @@ body{
     background-image:url(../img/ico_mainCon03_link.png);
     background-repeat: no-repeat;
     background-position: right 0;
+  }
+}
+.notice-group{
+  .board{
+    width:240px;
+    height:200px;
+    float: left;
+    background:#fff;
+    margin-right: 10px;
+  }
+}
+.board{
+  .sort{
+    color:#ffa043;
+    border: 1px solid #ffa043;
+    padding:0 10px;
+  }
+  .link-tit{
+    display:block;
   }
 }

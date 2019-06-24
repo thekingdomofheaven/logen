@@ -508,3 +508,40 @@ body{
     color:#999;
   }
 }
+//고객센터 영역
+
+.customer{
+  width:360px;
+  height:420px;
+  background:url(../img/img_con3bg_01.jpg) no-repeat;
+  float: right;
+  margin-top: -120px;
+  .customer-wrap{
+    width:290px;
+    margin:0 auto;
+    .call{
+      color:#61553e;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: -5px;
+      span{
+        display:block;
+        font-size: 42px;
+        font-weight: 700;
+      }
+    }
+    .time{
+      color:#61553e;
+    }
+  }
+}
+.customer-tit{
+  font-size: 36px;
+  color:#fff;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+.customer-list{
+  
+}

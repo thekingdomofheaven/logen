@@ -9,7 +9,8 @@ body{
   height:1080px;
   .swiper-wrapper{
     .swiper-slide{
-      background-position: center 0;
+      background-position: center bottom;
+      background-size: cover;
       img{
         position: absolute;
         left:50%;
@@ -532,6 +533,7 @@ body{
     }
     .time{
       color:#61553e;
+      margin-bottom: 45px;
     }
   }
 }
@@ -543,5 +545,40 @@ body{
   margin-bottom: 35px;
 }
 .customer-list{
-  
+  display:flex;
+  justify-content: space-between;
+  li{
+    width:92px;
+    height:110px;
+    background:#fff4dc;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+    a{
+      width:100%;
+      height:100%;
+      display:block;
+      span{
+        color:#61553e;
+        padding-top: 75px;
+        display:block;
+        font-weight: 500;
+      }
+    }
+  }
+  .customer-mantoman{
+    a{
+      background:url(../img/ico_customer_01.png) no-repeat center 20px;
+    }
+  }
+  .customer-note{
+    a{
+      background:url(../img/ico_customer_02.png) no-repeat center 20px;
+    }
+  }
+  .customer-faq{
+    a{
+      background:url(../img/ico_customer_03.png) no-repeat center 20px;
+    }
+  }
 }

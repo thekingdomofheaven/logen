@@ -635,6 +635,12 @@ body{
   height:100%;
   width:100%;
 }
-#touchSlider ul li { height:100%; background:#9C9; font-size:14px; color:#fff; 
+#touchSlider ul li { height:100%; font-size:14px; color:#fff; 
   width:388px;
+  a{
+    img{
+      width:100%;
+      height: auto;
+    }
+  }
 }

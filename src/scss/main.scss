@@ -452,16 +452,17 @@ body{
     color:#666;
     font-weight: 300;
   }
-  .notice-more{
-    width:163px;
-    height:24px;
-    display:block;
-    color:#666;
-    font-weight: 500;
-    background-image:url(../img/ico_mainCon03_link.png);
-    background-repeat: no-repeat;
-    background-position: right 0;
-  }
+}
+//더보기
+.more{
+  width:163px;
+  height:24px;
+  display:block;
+  color:#666;
+  font-weight: 500;
+  background-image:url(../img/ico_mainCon03_link.png);
+  background-repeat: no-repeat;
+  background-position: right 0;
 }
 .notice-group{
   .board{
@@ -592,4 +593,29 @@ body{
 .logenshop-title-area{
   width:344px;
   height:100%;
+  h2{
+    font-size: 48px;
+    color:#222;
+    margin-top: 80px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  .nations{
+    font-size: 36px;
+    color:#fdbf57;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .explain{
+    font-size: 18px;
+    color:#61553e;
+    font-weight: 300;
+    margin-bottom: 30px;
+    span{
+      font-weight: 500;
+    }
+  }
+}
+.logenshop-more{
+  width:148px;
 }

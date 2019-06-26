@@ -2,10 +2,11 @@
  * @name	jQuery.touchSlider
  * @author	dohoons ( http://dohoons.com/ )
  *
- * @version	1.5.2
+ * @version	1.6.1
  * @since	201106
  *
  * @param Object	settings	환경변수 오브젝트
+ *		mode			-	슬라이드 모드, ('swipe' or 'fade') (default 'swipe')
  *		useMouse		-	마우스 드래그 사용 (default true)
  *		roll			-	순환 (default true)
  *		flexible		-	유동 레이아웃 (default true)
@@ -52,6 +53,7 @@
 	$.fn.touchSlider = function(settings) {
 		
 		$.fn.touchSlider.defaults = {
+			mode: 'swipe',
 			useMouse: true,
 			roll: true,
 			flexible: true,
@@ -83,6 +85,7 @@
 
 		if(opts.breakpoints) {
 			opts.breakpoints.defaultOption = {
+				mode: opts.mode,
 				roll: opts.roll,
 				flexible: opts.flexible,
 				speed: opts.speed,
@@ -306,7 +309,7 @@
 			}
 		},
 		
-		resize: function() {			
+		resize: function() {
 			if(this.opts.flexible) {
 				var tmp_w = this._item_w;
 
@@ -328,6 +331,7 @@
 					this._start[i] = (this._start[i] - gap) / tmp_w * this._item_w + gap;
 
 					this.move({
+						dir: 0,
 						tg: this._list.eq(i),
 						to: this._pos[i]
 					});
@@ -417,10 +421,12 @@
 				for(var i=0, len=this._len; i<len; ++i) {
 					var tmp = this._start[i] + this._left;
 					
-					this.move({
-						tg: this._list.eq(i),
-						to: tmp
-					});
+					if(this.opts.mode === 'swipe') {
+						this.move({
+							tg: this._list.eq(i),
+							to: tmp
+						});
+					}
 					
 					this._pos[i] = tmp;
 				}
@@ -499,6 +505,7 @@
 			var transform = 'translate3d(' + obj.to + 'px,0,0)';
 			var transStyle = {
 				'left': '0',
+				'opacity': '1',
 				'-moz-transition': transition,
 				'-moz-transform': transform,
 				'-ms-transition': transition,
@@ -510,68 +517,106 @@
 			};
 			var list_wrap = this._list_wrap;
 			var list_wrap_gap = 0;
+			var isTransition = env.supportsCssTransitions && this.opts.transition;
 
-			if(env.supportsCssTransitions && this.opts.transition) {
-				if(obj.speed === undefined) {
-					obj.tg.css(transStyle);
-				} else {
-					if(obj.btn_click) {
-						setTimeout(function() {
-							obj.tg.css(transStyle);
-						}, 10);
+			obj.tg.attr('aria-hidden', obj.to < 0 || obj.to >= this._width);
+			
+			if(this.opts.mode === 'swipe') {
+				if(isTransition) {
+					if(obj.speed === undefined) {
+						obj.tg.stop().css(transStyle);
 					} else {
-						list_wrap_gap = (obj.gap > 0) ? -(obj.to - obj.from) : obj.from - obj.to;
+						if(obj.btn_click) {
+							setTimeout(function() {
+								obj.tg.css(transStyle);
+							}, 10);
+						} else {
+							list_wrap_gap = (obj.gap > 0) ? -(obj.to - obj.from) : obj.from - obj.to;
 
-						obj.tg.css({
-							'left': obj.to + 'px',
-							'-moz-transition': 'none',
-							'-moz-transform': 'none',
-							'-ms-transition': 'none',
-							'-ms-transform': 'none',
-							'-webkit-transition': 'none',
-							'-webkit-transform': 'none',
-							'transition': 'none',
-							'transform': 'none'
-						});
-
-						list_wrap.css(env.isIE11 ? {
-							transition: 'none',
-							transform: 'none',
-							left: list_wrap_gap + 'px'
-						} : {
-							transition: 'none',
-							transform: 'translate3d(' + list_wrap_gap + 'px,0,0)'
-						});
-
-						setTimeout(function() {
-							list_wrap.css(env.isIE11 ? {
-								transition: obj.speed + 'ms ease',
-								left: '0'
-							} : {
-								transition: obj.speed + 'ms ease',
-								transform: 'translate3d(0,0,0)'
+							obj.tg.css({
+								'left': obj.to + 'px',
+								'opacity': '1',
+								'-moz-transition': 'none',
+								'-moz-transform': 'none',
+								'-ms-transition': 'none',
+								'-ms-transform': 'none',
+								'-webkit-transition': 'none',
+								'-webkit-transform': 'none',
+								'transition': 'none',
+								'transform': 'none'
 							});
-						}, 10);
+
+							list_wrap.css(env.isIE11 ? {
+								transition: 'none',
+								transform: 'none',
+								left: list_wrap_gap + 'px'
+							} : {
+								transition: 'none',
+								transform: 'translate3d(' + list_wrap_gap + 'px,0,0)'
+							});
+
+							setTimeout(function() {
+								list_wrap.css(env.isIE11 ? {
+									transition: obj.speed + 'ms ease',
+									left: '0'
+								} : {
+									transition: obj.speed + 'ms ease',
+									transform: 'translate3d(0,0,0)'
+								});
+							}, 10);
+						}
+					}
+				} else {
+					if(obj.speed === undefined) {
+						obj.tg.stop().css({
+							'left': obj.to + 'px',
+							'opacity': '1'
+						});
+					} else {
+						obj.tg.stop().animate({
+							'left': obj.to + 'px',
+							'opacity': '1'
+						}, obj.speed);
 					}
 				}
-			} else {
-				if(obj.speed === undefined) {
-					obj.tg.css('left', obj.to + 'px');
+			} else if(this.opts.mode === 'fade') {
+				var isNotMove = obj.dir === 0 || obj === undefined;
+
+				if(obj.to >= 0 && obj.to < this._width) {
+					obj.tg.stop().css(
+						isTransition ? {
+							opacity: isNotMove ? 1 : 0,
+							zIndex: 2,
+							transition: 'none',
+							transform: 'translate3d(' + obj.to + 'px,0,0)'
+						} : {
+							opacity: isNotMove ? 1 : 0,
+							zIndex: 2,
+							left: obj.to + 'px'
+						}
+					).animate({
+						opacity: 1
+					}, obj.speed);
 				} else {
-					obj.tg.stop().animate({'left': obj.to + 'px'}, obj.speed);
+					obj.tg.stop().css({
+						zIndex: 1,
+						opacity: isNotMove ? 0 : null
+					}).animate({
+						opacity: 0
+					}, obj.speed);
 				}
 			}
 		},
 		
-		animate: function(d, btn_click, spd) {
+		animate: function(dir, btn_click, spd) {
 			if(this._drag || !this._scroll || btn_click) {
 				var speed = (spd > -1) ? spd : this._speed;
-				var gap = d * (this._item_w * this._view + this._view * this.opts.gap);
+				var gap = dir * (this._item_w * this._view + this._view * this.opts.gap);
 				var list = this._list;
 				var from = 0;
 				var to = 0;
 				
-				if(btn_click) this.position(d);
+				if(btn_click) this.position(dir);
 				if(this._left === 0 || (!this.opts.roll && this.limit_chk()) ) gap = 0;
 
 				for(var i=0, len = this._len; i<len; ++i) {
@@ -580,6 +625,7 @@
 					
 					this.move({
 						tg: list.eq(i),
+						dir: dir,
 						gap: gap,
 						from: from,
 						to: to,
@@ -588,7 +634,7 @@
 					});
 				}
 
-				if(d !== 0) {
+				if(dir !== 0) {
 					this.counter();
 				}
 			}

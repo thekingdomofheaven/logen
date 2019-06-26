@@ -589,10 +589,16 @@ body{
 }
 .logenshop-wrap{
   height:100%;
+  &:after{
+    content:'';
+    display:block;
+    clear: both;
+  }
 }
 .logenshop-title-area{
   width:344px;
   height:100%;
+  float: left;
   h2{
     font-size: 48px;
     color:#222;
@@ -618,4 +624,17 @@ body{
 }
 .logenshop-more{
   width:148px;
+}
+#touchSlider { background:#ccc; position:relative; overflow:hidden; 
+  width:calc(100% - 345px);
+  height:100%;
+  float: left;
+  border-left: 1px solid #ccc;
+}
+#touchSlider ul { position:absolute; top:0; left:0; overflow:hidden; 
+  height:100%;
+  width:100%;
+}
+#touchSlider ul li { height:100%; background:#9C9; font-size:14px; color:#fff; 
+  width:388px;
 }

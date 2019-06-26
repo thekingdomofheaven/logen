@@ -227,12 +227,30 @@
             </p><!-- exp -->
             <a href="#" class="logenshop-more more">더 많은 상품 보기</a>
         </div><!-- title-area -->
+        <div id="touchSlider">
+            <ul>
+                <li class="slide-one"><a href="#">
+                    <img src="img/melon.jpg" alt="겉은 아삭 속은 사르르 녹는 파파야 멜론 이미지">
+                    <p class="best-tag">WEEKLY BEST</p>
+                    <p class="goods-tit">파파야 멜론</p>
+                    <p class="goods-price">판매가 22,000원</p>
+                </a></li><!-- slide-one -->
+                <li class="slide-two"><a href="#">
+                    <img src="img/tape.jpg" alt="물류용품 합리적 가격에 만나보세요.">
+                    <p class="best-tag">WEEKLY BEST</p>
+                    <p class="goods-tit">합리적 가격 물류용품</p>
+                    <p class="goods-price">판매가 17,000원</p>
+                </a></li><!-- slide-one -->
+            </ul>
+        </div><!-- touchSlider -->
     </div><!-- wrap -->
 </div><!-- logenshop -->
-<script src="../js/jquery.touchSlider.js"></script>
+<script src="js/jquery.touchSlider.js"></script>
 <script>
 $(document).ready(function(){
-
+    $('#touchSlider').touchSlider({
+        view:2
+    });
 });
 </script>
 </body>

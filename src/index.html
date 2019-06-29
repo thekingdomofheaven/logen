@@ -226,6 +226,11 @@
                 자신 있게 추천한 상품입니다.
             </p><!-- exp -->
             <a href="#" class="logenshop-more more">더 많은 상품 보기</a>
+            <div>
+                <ul id="dots">
+                    <li></li>
+                </ul><!-- slick-dots -->
+            </div>
         </div><!-- title-area -->
         <div>
             <div class="logenshopSlider">
@@ -252,7 +257,8 @@ $(document).ready(function(){
         slidesToShow:1,
         infinite:true,
         arrows:false,
-        dots:true
+        dots:true,
+        appendDots:$('#dots')
     })
 })
 </script>

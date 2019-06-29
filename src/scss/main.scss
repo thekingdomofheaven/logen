@@ -599,6 +599,7 @@ body{
   width:344px;
   height:100%;
   float: left;
+  border-right: 1px solid rgb(230, 230, 230);
   h2{
     font-size: 48px;
     color:#222;
@@ -626,21 +627,48 @@ body{
   width:148px;
 }
 .logenshopSlider{
-  background:blue;
+  margin-top: 70px;
+  margin-left: 50px;
   float:left;
-  width:calc(100% - 344px);
+  width:760px;
   height:100%;
   overflow: hidden;
-  li{
+  div{
     float: left;
-    width:50%;
+    width:388px;
+    height:480px;
+    margin-right: 20px;
+    position: relative;
   }
   a{
     display:block;
-    width:50%;
+    width:100%;
     img{
       width:100%;
       height:auto;
     }
+  }
+  .best-tag{
+    padding:8px 20px;
+    display:inline-block;
+    background:#61553e;
+    color:#fff;
+    font-size: 14px;
+    position: absolute;
+    bottom:150px;
+    left:15px;
+  }
+  .goods-tit{
+    font-size: 28px;
+    margin-top: 60px;
+    color:#222;
+  }
+  .goods-price{
+    font-size: 16px;
+    color:#666;
+    margin-top: 20px;
+  }
+  .slick-dots{
+    
   }
 }

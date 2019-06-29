@@ -228,22 +228,20 @@
             <a href="#" class="logenshop-more more">더 많은 상품 보기</a>
         </div><!-- title-area -->
         <div>
-            <ul class="logenshopSlider">
-                <li class="slide-one"><a href="#">
+            <div class="logenshopSlider">
+                <div class="slide-one"><a href="#">
                     <img src="img/melon.jpg" alt="겉은 아삭 속은 사르르 녹는 파파야 멜론 이미지">
                     <p class="best-tag">WEEKLY BEST</p>
                     <p class="goods-tit">파파야 멜론</p>
                     <p class="goods-price">판매가 22,000원</p>
-                </a></li><!-- slide-one -->
-                <li class="slide-two"><a href="#">
+                </a></div><!-- slide-one -->
+                <div class="slide-two"><a href="#">
                     <img src="img/tape.jpg" alt="물류용품 합리적 가격에 만나보세요.">
                     <p class="best-tag">WEEKLY BEST</p>
                     <p class="goods-tit">합리적 가격 물류용품</p>
                     <p class="goods-price">판매가 17,000원</p>
-                </a></li><!-- slide-two -->
-                
-                
-            </ul>
+                </a></div><!-- slide-two -->
+            </div>
         </div><!-- logenshopSlider -->
     </div><!-- wrap -->
 </div><!-- logenshop -->
@@ -251,9 +249,10 @@
 <script>
 $(document).ready(function(){
     $('.logenshopSlider').slick({
+        slidesToShow:1,
+        infinite:true,
         arrows:false,
-        slidesToShow:2,
-        infinite:true
+        dots:true
     })
 })
 </script>

@@ -670,16 +670,28 @@ body{
   }
 }
 .slick-dots{
+  margin-top: 100px;
   li{
     float: left;
     button{
       width:10px;
       height:10px;
       border-radius: 50%;
-      background:#fdbf57;
+      background:#ccc;
       border:none;
       text-indent: -9999px;
       margin-right: 10px;
+      padding:0;
+      cursor: pointer;
+      outline: transparent;
+    }
+    button:hover{
+      background:#fdbf57;
     }
   }
+}
+li.slick-active{
+  
+    button{background:#fdbf57;}
+  
 }

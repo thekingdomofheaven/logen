@@ -668,6 +668,18 @@ body{
     color:#666;
     margin-top: 20px;
   }
-  #dots{
+}
+.slick-dots{
+  li{
+    float: left;
+    button{
+      width:10px;
+      height:10px;
+      border-radius: 50%;
+      background:#fdbf57;
+      border:none;
+      text-indent: -9999px;
+      margin-right: 10px;
+    }
   }
 }

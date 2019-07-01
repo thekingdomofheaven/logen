@@ -644,6 +644,7 @@ body{
     height:480px;
     margin-right: 20px;
     position: relative;
+    
   }
   a{
     display:block;
@@ -706,10 +707,11 @@ li.slick-active{
   position: relative;
   margin-top: -60px;
   .wrap{
-   height:510px;
+   height:450px;
    width:1204px;
    margin:0 auto;
    background:url(../img/bg_mainCon05_bg.png) no-repeat;
+   padding-top: 60px;
   }
 }
 .orangeback{
@@ -719,4 +721,37 @@ li.slick-active{
   position: absolute;
   bottom:0;
   z-index: -10;
+}
+.logenappTit{
+  font-size: 48px;
+  color:#61553e;
+  font-weight: 500;
+  margin-top: 100px;
+}
+.logenappText{
+  font-size: 18px;
+  color:#61553e;
+  font-weight: 300;
+  margin-top: 20px;
+}
+//앱사이트 버튼
+.appsite{
+  margin-top: 80px;
+  li{
+    width:240px;
+    height:60px;
+    display:inline-block;
+    a{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+  }
+}
+.appstore{
+  background:url(../img/btn_download_ios.png);
+  margin-right: 5px;
+}
+.googlestore{
+  background:url(../img/btn_download_android.png);
 }

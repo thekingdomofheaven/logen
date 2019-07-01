@@ -691,7 +691,16 @@ body{
   }
 }
 li.slick-active{
-  
-    button{background:#fdbf57;}
-  
+  button{background:#fdbf57;}
+}
+//로젠택배앱 영역
+.logenapp{
+  height:510px;
+  background:rgb(252, 236, 195);
+  .wrap{
+    width:1204px;
+    height:100%;
+    margin:0 auto;
+    background:url(../img/bg_mainCon05_bg.png) no-repeat center 0;
+  }
 }

@@ -633,6 +633,11 @@ body{
   width:760px;
   height:100%;
   overflow: hidden;
+  &:after{
+    content:'';
+    display:block;
+    clear: both;
+  }
   div{
     float: left;
     width:388px;
@@ -696,11 +701,22 @@ li.slick-active{
 //로젠택배앱 영역
 .logenapp{
   height:510px;
-  background:rgb(252, 236, 195);
+  width:100%;
+  background-color: transparent;
+  position: relative;
+  margin-top: -60px;
   .wrap{
-    width:1204px;
-    height:100%;
-    margin:0 auto;
-    background:url(../img/bg_mainCon05_bg.png) no-repeat center 0;
+   height:510px;
+   width:1204px;
+   margin:0 auto;
+   background:url(../img/bg_mainCon05_bg.png) no-repeat;
   }
+}
+.orangeback{
+  background:rgb(252, 236, 195);
+  height:450px;
+  width:100%;
+  position: absolute;
+  bottom:0;
+  z-index: -10;
 }

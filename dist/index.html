@@ -312,7 +312,30 @@ $(document).ready(function(){
     </div><!-- wrap -->
 </div><!-- logenapp -->
 <script>
+$(document).ready(function(){
+    var appstore = $('.appstore');
+    var googlestore = $('.googlestore');
+    var appstoreQr = $('.appstore-qr a');
+    var googlestoreQr = $('.googlestore-qr a');
 
+    appstore.add(appstoreQr).mouseenter(function(){
+        appstoreQr.css('display','block');
+    })
+    appstoreQr.add(appstore).mouseleave(function(){
+        appstoreQr.css('display','none');
+    })
+    googlestore.add(googlestoreQr).mouseenter(function(){
+        googlestoreQr.css('display','block');
+    })
+    googlestoreQr.add(googlestore).mouseleave(function(){
+        googlestoreQr.css('display','none');
+    })
+})
 </script>
+<footer>
+    <div class="wrap footer-wrap">
+        
+    </div><!-- wrap -->
+</footer>
 </body>
 </html>

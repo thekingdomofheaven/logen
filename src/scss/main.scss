@@ -783,3 +783,36 @@ li.slick-active{
     display:none;
   }
 }
+//푸터영역
+footer{
+  height:304px;
+  background:#393939;
+}
+.footer-top{
+  height:127px;
+  border-bottom: 1px solid rgb(91, 91, 91);
+  position: relative;
+}
+.footer-menu{
+  display:flex;
+  position: absolute;
+  bottom:30px;
+  li{
+    margin-right: 20px;
+  }
+  a{
+    font-size: 17px;
+    color:#fff;
+  }
+  .color{
+    a{
+      color:#fdbf57;
+    }
+  }
+}
+.sns{
+  display:flex;
+  position: absolute;
+  bottom:30px;
+  right:0;
+}

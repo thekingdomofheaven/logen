@@ -83,3 +83,14 @@
     }
   }
 }
+//메뉴박스영역
+.menubox{
+  height:500px;
+  background:#fff;
+  position: absolute;
+  top:90px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display:none;
+}

@@ -110,7 +110,7 @@
     border-radius: 4px;
     position: static;
     transform: unset;
-    margin-top: 80px;
+    margin-top: 150px;
     input{
       background:transparent;
       &::placeholder{
@@ -132,6 +132,7 @@
     width:190px;
     display:inline-block;
     margin-bottom: 40px;
+    position: relative;
   }
   a{
     font-size: 18px;
@@ -145,4 +146,22 @@
 }
 .depth1{
   position: absolute;
+  top:50px;
+  li{
+    margin-bottom: 6px;
+  }
+  li:first-child:before{
+    content:'';
+    display:block;
+    width:15px;
+    height:10px;
+    border-top: 1px solid #999;
+    position: absolute;
+    top:-12px;
+  }
+  a{
+    font-size: 16px;
+    color:#999;
+    font-weight: 400;
+  }
 }

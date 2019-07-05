@@ -104,5 +104,29 @@
   display:flex;
 }
 .listbox{
-  padding: 40px 0 0 80px;
+  padding: 35px 0 0 70px;
+  .searchbox{
+    background:rgb(235, 235, 235);
+    border-radius: 4px;
+    position: static;
+    transform: unset;
+    margin-top: 80px;
+  }
+}
+.list{
+  width:800px;
+  li{
+    width:190px;
+    display:inline-block;
+    margin-bottom: 40px;
+  }
+  a{
+    font-size: 18px;
+    color:#222;
+    font-weight: 500;
+    &:hover{
+      color:orange;
+      text-decoration: underline;
+    }
+  }
 }

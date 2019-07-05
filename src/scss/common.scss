@@ -111,11 +111,24 @@
     position: static;
     transform: unset;
     margin-top: 80px;
+    input{
+      background:transparent;
+      &::placeholder{
+        color:rgb(111, 111, 111);
+        font-weight: 300;
+      }
+    }
+    button{
+      background:transparent url(../img/btn_headerSearch.png) no-repeat;
+    }
+  }
+  .introduce{
+    display:none;
   }
 }
 .list{
   width:800px;
-  li{
+  & > li{
     width:190px;
     display:inline-block;
     margin-bottom: 40px;
@@ -129,4 +142,7 @@
       text-decoration: underline;
     }
   }
+}
+.depth1{
+  position: absolute;
 }

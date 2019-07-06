@@ -105,12 +105,15 @@
 }
 .listbox{
   padding: 35px 0 0 70px;
+  position: relative;
+  height:100%;
   .searchbox{
     background:rgb(235, 235, 235);
     border-radius: 4px;
-    position: static;
     transform: unset;
-    margin-top: 150px;
+    position: absolute;
+    left:70px;
+    top:320px;
     input{
       background:transparent;
       &::placeholder{

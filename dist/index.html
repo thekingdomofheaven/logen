@@ -148,6 +148,28 @@
             <li><a href="#">사고접수</a></li>
             <li><a href="#">현금영수증</a></li>
           </ul>
+          <ul class="list company">
+            <li><a href="#">기업전용시스템</a></li>
+            <li><a href="#">원격지원</a></li>
+            <li><a href="#">배송조회링크서비스</a></li>
+            <li><a href="#">오픈API안내</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">요금문의</a></li>
+          </ul>
+          <ul class="list network">
+            <li><a href="#">택배이동경로</a></li>
+            <li><a href="#">분류센터안내</a></li>
+            <li><a href="#">지점안내</a></li>
+            <li><a href="#">취급점안내</a>
+              <ul class="depth1">
+                <li><a href="#">소개 개요</a></li>
+                <li><a href="#">운영 프로세스</a></li>
+                <li><a href="#">제안 내용</a></li>
+                <li><a href="#">예약확인</a></li>
+              </ul>
+            </li>
+            <li><a href="#">영업소 모집안내</a></li>
+          </ul>
           <div class="searchbox">
             <div class="searchtit">
                 <span>택배조회</span>
@@ -156,7 +178,7 @@
                 <input type="number" placeholder="운송장번호를 입력하세요" class="no-spinners">
                 <button></button>
             </div><!-- inputarea -->
-        </div><!-- searchbox -->
+          </div><!-- searchbox -->
         </div><!-- listbox -->
       </div><!-- wrap -->
     </div><!-- menubox -->
@@ -167,6 +189,8 @@
       var menubox = $('.menubox');
       var slide = $('.swiper-slide');
       var topPlusSlide = topWrap + slide;
+      var mainMenu = $('.menu > li');
+
       $('.menu > li').mouseenter(function(){
         topWrap.addClass('on');
         logo.css({"background":"url(./img/img_logo_on.png)"});
@@ -177,7 +201,19 @@
         topWrap.removeClass('on');
         logo.css({"background":"url(./img/img_logo.png)"});
         menubox.slideUp();
+        mainMenu.children('a').css('color','#fff');
       })
+
+      mainMenu.each(function(index){
+        $(this).on('mouseenter',function(){
+          $('.list').css('display','none').eq(index).css('display','block');
+        })
+        $(this).on('mouseenter',function(){
+          mainMenu.children('a').css('color','#222');
+          $(this).children('a').css('color','orange');
+        })
+    
+      });
     });
     </script>
 </header>

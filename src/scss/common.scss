@@ -169,6 +169,7 @@
   }
 }
 .branch-search{
+  display:none;
  .searchtit{
   span:before{
     background-image: url(../img/ico_headerPlace.png);
@@ -180,7 +181,46 @@
 }
 .search-select{
   position: absolute;
-  right:10px;
-  top:35px;
+  right:0;
+  top:45px;
   font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background:url(../img/ico_select.png) no-repeat;
+  border-radius: 0;
+  border:none;
+  text-indent:-9999px;
+  width:20px;
+  height:10px;
+}
+.search-select::-ms-expand{
+  display:none;
+}
+
+.customer-support{
+  .searchtit{
+    span:before{
+      background-image: url(../img/ico_headerCustomer.png);
+    }
+   }
+  .info{
+    font-size: 16px;
+    color:#666;
+    width:500px;
+    height:100px;
+    position: relative;
+    p{
+      position: absolute;
+      left:260px;
+      top:38px;
+    }
+    strong{
+      font-size: 42px;
+      color:#ffa200;
+      position: absolute;
+      top:15px;
+      left:30px;
+    }
+  }
 }

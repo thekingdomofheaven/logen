@@ -187,8 +187,8 @@
           </div><!-- searchbox -->
           <div class="searchbox branch-search">
             <div class="searchtit">
-                <span>지점검색</span>
-                <select>
+                <span class="search-span">지점검색</span>
+                <select class="search-select">
                   <option>지점검색</option>
                   <option>취급점검색</option>
                 </select>
@@ -231,7 +231,16 @@
           mainMenu.children('a').css('color','#222');
           $(this).children('a').css('color','orange');
         })
-    
+      });
+
+      //지점,취급점선택
+      var searchSpan = $('.search-span');
+      var searchSelect = $('.search-select');
+
+      searchSelect.change(function(){
+        var value = $('.search-select option:selected').text();
+
+        searchSpan.text(value);
       });
     });
     </script>

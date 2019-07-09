@@ -99,7 +99,7 @@
     <div class="topWrap">
       <div class="topMenu">
         <h1 class="logo">로젠택배</h1>
-        <ul class="menu">
+        <ul class="menu" id="menu">
           <li><a href="#">회사소개</a></li>
           <li><a href="#">개인택배</a></li>
           <li><a href="#">기업택배</a></li>
@@ -251,6 +251,14 @@
 
         searchSpan.text(value);
       });
+
+      //서치박스
+      var searchBox = $('.searchbox');
+      var parselSearch = $('.parsel-search');
+      var menuLi = document.getElementById('menu').getElementsByTagName('li');
+      menuLi[0].click(function(){
+        parselSearch.css('display','block');
+      })
     });
     </script>
 </header>

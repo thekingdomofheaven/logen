@@ -171,8 +171,9 @@
 .branch-search{
   display:none;
  .searchtit{
+  background: url(../img/ico_headerPlace.png) no-repeat 45px 30px;
   span:before{
-    background-image: url(../img/ico_headerPlace.png);
+    background-image:none;
   }
  } 
 }

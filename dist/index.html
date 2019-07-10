@@ -255,10 +255,23 @@
       //서치박스
       var searchBox = $('.searchbox');
       var parselSearch = $('.parsel-search');
-      var menuLi = document.getElementById('menu').getElementsByTagName('li');
-      menuLi[0].click(function(){
+      var branchSearch = $('.branch-search');
+      var customerSupport = $('.customer-support');
+
+      $('.menu > li:lt(3)').on('mouseenter',function(){
+        searchBox.css('display','none');
         parselSearch.css('display','block');
-      })
+      });
+
+      $('.menu > li:eq(3)').on('mouseenter',function(){
+        searchBox.css('display','none');
+        branchSearch.css('display','block');
+      });
+  
+      $('.menu > li:last').on('mouseenter',function(){
+        searchBox.css('display','none');
+        customerSupport.css('display','block');
+      });
     });
     </script>
 </header>
